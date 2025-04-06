@@ -14,8 +14,16 @@ title: Welcome
     capture details in scenes with a high contrast of light and shadow. This is especially important in environments
     with challenging lighting
     conditions, such as backlit scenes, brightly lit outdoor areas, or interiors with sharp light variations.</p>
-  <p>We offer specialized codec based on GoPro CineForm<sup>2</sup> technology that enables 12-bit color depth video
-    recording while maintaining the high quality and dynamic range of the signals. </p>
+
+  <p>We offer several specialized codecs for The Imaging Source IC Capture 2.5 software.</p>
+  <ol>
+    <li>CineForm DirectShow Video Encoder: the codec is based on GoPro CineForm<sup>2</sup> technology that enables
+      12-bit color depth video recording while maintaining the high quality and dynamic range of the signals;</li>
+    <li>H.265/HEVC DirectShow Video Encoder backed by NVIDIA GPUs: the codec is leveraging hardware assisted video
+      encoder available with NVIDIA vide adapters. HEVC Main 10 profile enables 10-bit color depth. <a
+        href="hevc-nvidia.html">Read more...</a></li>
+  </ol>
+
   <p>The recorded footage is optimized for compatibility with popular post-processing and editing tools, including
     DaVinci Resolve<sup>3</sup>, ensuring a smooth workflow for professional video editing and enhancement.</p>
 
@@ -25,13 +33,13 @@ title: Welcome
       installed from Downloads section below installed</li>
     <li>Have <a href="https://www.theimagingsource.com/en-us/support/download/iccapture-2.5.1547.4007/">IC Capture 2.5
         software</a> installed (note
-      that you cannot use newer IC Capture 4.0 as this is an incomatible redesigned release with lack of support for AVI
+      that you cannot use newer IC Capture 4.0 as this is an incompatible redesigned release with lack of support for AVI
       recording, with reduced interoperability with external components)</li>
     <li>Have codec from Downloads section below downloaded and installed</li>
     <li>Start IC Capture application (make sure to use 64-bit version of the application as the installer installs both)
     </li>
     <li>Select RGB64 format for video acquisition</li>
-    <li>Have "AVI" format and "Alax.Info CFHD Encoder" codec selected</li>
+    <li>Have "AVI" format selected, and one of "Alax.Info... Encoder" codecs, CFHD or H.265/HEVC</li>
     <li>Record video with up to 12-bit color depth in target AVI file, open for playback with Media Player Classic Home
       Cinema, DaVinci Resolve and other popular software</li>
   </ul>
@@ -48,7 +56,7 @@ title: Welcome
 
   <h2>Free Trial and Registration</h2>
   <p>Before the installation is personalized (free trial), the codec embeds "DEMO CODEC" text overlay over the encoded
-    video. A purchased lincense token removes the overlay.</p>
+    video. A purchased license token removes the overlay.</p>
 
   <h2>Purchase - CineForm (CFHD) Codec with 12-bit Color Depth Support</h2>
   <div style="display: flex; justify-content: space-around; gap: 20px; margin-bottom: 20px;">
@@ -80,6 +88,7 @@ title: Welcome
   </div>
 
   <h2>Purchase - H.265/HEVC Main 10 Codec with 10-bit Color Depth Support backed by NVIDIA GPUs</h2>
+  <p>Please review <a href="hevc-nvidia.html">the limitations of NVIDIA hardware specific</a> video encoder codecs.</p>
   <div style="display: flex; justify-content: space-around; gap: 20px; margin-bottom: 20px;">
 
     <!-- Individual Users -->
@@ -108,11 +117,6 @@ title: Welcome
     </div>
   </div>
 
-  <h2>H.265/HEVC Codec Main 10 with 10-bit Color Depth Support for NVIDIA GPUs</h2>
-  <p>Development is underway, hardware constraints apply - a NVIDIA video card with H.265/HEVC Main 10 profile video
-    encoding capability is required (most of the video cards are comatible, HEVC Main 10 profile was introduced first
-    with GeForce GTX 1050 series). Inquire for further information.</p>
-
   <h2>Future Development</h2>
 
   <h3>Universal Direct3D 12 GPU assisted H.265/HEVC Codec Main 10 with 10-bit Color Depth Support</h3>
@@ -130,11 +134,3 @@ title: Welcome
     <li>All other trademarks, logos, and service marks mentioned are the property of their respective owners</li>
   </ul>
 </section>
-
-<footer>
-  <p>
-    &copy; 2025 <a href="https://www.linkedin.com/company/roman-in-poland">Oprogramowanie Roman Ryltsov</a>.
-    All rights reserved.
-    Inquiries at <a href="mailto:iccapturecodecs@alax.info">iccapturecodecs@alax.info</a>.
-  </p>
-</footer>

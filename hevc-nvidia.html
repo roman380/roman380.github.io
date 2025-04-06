@@ -1,0 +1,32 @@
+---
+layout: default
+title: Codecs for NVIDIA hardware
+---
+
+<header>
+  <h1>Codecs for IC Capture 2.5 Software - NVIDIA Specific</h1>
+</header>
+
+<section>
+  <p>NVIDIA hardware specific codecs utilize video encoding capabilities available with video adapters. A detailed
+    support matrix, which specifies capabilities available with specific models, <a
+      href="https://developer.nvidia.com/video-encode-and-decode-gpu-support-matrix-new">is available at NVIDIA
+      website</a>.
+  </p>
+
+  <p>H.265/HEVC DirectShow Video Encoder backed by NVIDIA GPUs is utilizing support for HEVC Main 10 profile,
+    implemented in the hardware. See specifically "HEVC
+    10-bit support" column in the matrix link above.</p>
+
+  <p>HEVC (High Efficiency Video Coding), also known as H.265, is a video compression standard that
+    significantly improves encoding efficiency compared to its predecessor, H.264/AVC. The Main 10 profile in HEVC
+    specifically supports 10-bit color depth, which means that each color channel (red, green, and blue) can represent
+    up to 1,024 shades per channel instead of the 256 shades available in standard 8-bit color. This profile is
+    particularly important for professional video production, broadcasting, and streaming services that aim to provide
+    higher-quality visuals. Many modern TVs, monitors, and streaming platforms support 10-bit HEVC, enhancing the
+    viewing experience with more natural and lifelike colors.</p>
+
+  <ul>
+    <li>NVIDIA video adapter is assumed to be the first video adapter in the system</li>
+  </ul>
+</section>
