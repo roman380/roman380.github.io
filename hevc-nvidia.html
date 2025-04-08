@@ -26,17 +26,43 @@ title: Codecs for NVIDIA hardware
     higher-quality visuals. Many modern TVs, monitors, and streaming platforms support 10-bit HEVC, enhancing the
     viewing experience with more natural and lifelike colors.</p>
 
-  <ul>
-    <li>NVIDIA video adapter is assumed to be the first video adapter in the system</li>
-  </ul>
+  <h2>Known Problems and Limitations</h2>
 
+  <ol>
+    <li>NVIDIA video adapter is assumed to be the first video adapter in the system</li>
+    <li>The codec is compatible with the NVIDIA driver applied by Windows 11 automatically (version 457.51 at the time
+      of writing), however it is recommended to install the latest from NVIDIA website; one way to do this is <a
+        href="https://www.nvidia.com/en-us/software/nvidia-app/">NVIDIA App</a> with the function of driver update </li>
+  </ol>
+
+  <h2>Questions and Answers</h2>
+
+  <p><b>Q:</b> HEVC AVI files are recognized by some software, but not my favorite application, is there any solution
+    for this?
+  </p>
+
+  <p><b>A:</b> IC Capture 2.5 creates AVI files, and hence AVI is the output. AVI is an older container format that
+    isn't
+    commonly used with HEVC, as it lacks support for modern compression features. While HEVC is practical for
+    high-quality video with reduced file sizes, using AVI as a container for HEVC isn't ideal due to compatibility
+    issues with media players and devices.</p>
+
+  <p>There are online tools for conversion but most likely the file is huge and so you can convert the files with an
+    offline tool. Download <a href="https://ffmpeg.org/download.html#build-windows">FFmpeg</a>, and since AVI file
+    already contains HEVC video, you can avoid re-encoding and simply copy the video stream:</p>
+
+  <code>ffmpeg -i input.avi -c:v copy -an output.mp4</code><br />
+
+  <p>This method is fast and preserves quality since it doesn’t re-encode the video.</p>
+
+  <hr>
   <p><a href="index.html">↩️ Return to homepage</a></p>
 </section>
 
 <footer>
   <p>
-      &copy; 2025 <a href="https://www.linkedin.com/company/roman-in-poland">Oprogramowanie Roman Ryltsov</a>.
-      All rights reserved.
-      Inquiries at <a href="mailto:iccapturecodecs@alax.info">iccapturecodecs@alax.info</a>.
+    &copy; 2025 <a href="https://www.linkedin.com/company/roman-in-poland">Oprogramowanie Roman Ryltsov</a>.
+    All rights reserved.
+    Inquiries at <a href="mailto:iccapturecodecs@alax.info">iccapturecodecs@alax.info</a>.
   </p>
 </footer>
