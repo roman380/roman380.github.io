@@ -14,7 +14,7 @@ title: Codecs for NVIDIA hardware
       website</a>.
   </p>
 
-  <p>H.265/HEVC DirectShow Video Encoder backed by NVIDIA GPUs is utilizing support for HEVC Main 10 profile,
+  <p>H.265/HEVC DirectShow Video Encoder powered by NVIDIA GPUs is utilizing support for HEVC Main 10 profile,
     implemented in the hardware. See specifically "HEVC
     10-bit support" column in the matrix link above.</p>
 
@@ -51,7 +51,8 @@ title: Codecs for NVIDIA hardware
     offline tool. Download <a href="https://ffmpeg.org/download.html#build-windows">FFmpeg</a>, and since AVI file
     already contains HEVC video, you can avoid re-encoding and simply copy the video stream:</p>
 
-  <code>ffmpeg -i input.avi -c:v copy -an output.mp4</code><br />
+  <code>ffmpeg -i input.avi -c:v copy -an output.mp4
+  </code>
 
   <p>This method is fast and preserves quality since it doesn’t re-encode the video.</p>
 
