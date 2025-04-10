@@ -42,19 +42,41 @@ title: Codecs for NVIDIA hardware
   </p>
 
   <p><b>A:</b> IC Capture 2.5 creates AVI files, and hence AVI is the output. AVI is an older container format that
-    isn't
-    commonly used with HEVC, as it lacks support for modern compression features. While HEVC is practical for
+    isn't commonly used with HEVC, as it lacks support for modern compression features. While HEVC is practical for
     high-quality video with reduced file sizes, using AVI as a container for HEVC isn't ideal due to compatibility
     issues with media players and devices.</p>
 
-  <p>There are online tools for conversion but most likely the file is huge and so you can convert the files with an
-    offline tool. Download <a href="https://ffmpeg.org/download.html#build-windows">FFmpeg</a>, and since AVI file
-    already contains HEVC video, you can avoid re-encoding and simply copy the video stream:</p>
+  <p>However, to address this problem this codec creates additional MP4 file with the same content as AVI. When you
+    configure IC Capture 2.5 to record video into an AVI file,
+    after recording session you will find additional MP4 file with the same name, same content in the target directory.
+    You can use it right away instead of the AVI recording.</p>
 
-  <code>ffmpeg -i input.avi -c:v copy -an output.mp4
-  </code>
+  <p><b>Q:</b> Is it possible to use the codec with 32-bit version of IC Capture 2.5?</p>
 
-  <p>This method is fast and preserves quality since it doesn’t re-encode the video.</p>
+  <p><b>A:</b> No, we do not provide the 32-bit version of the codec. IC Capture 2.5 software is provided in two
+    variants in the same installer. Please use 64-bit (x64) build of the application at all times.</p>
+
+  <p><b>Q:</b> Is it possible to use the codec with IC Measure software, or with IC Capture 4?</p>
+
+  <p><b>A:</b> No, not yet. The Imaging Source removed support for AVI recording, for DirectShow recording and reduced
+    extensibility surface. We currently have no plans to extend their MP4 recording capabilities.
+    However note that with AVI recording in IC Capture 2.5 you immediately get both AVI and MP4 files with the same
+    content, so you can MP4 version right away with the applications that require this format.</p>
+
+  <p><b>Q:</b> Is it possible to change frame rate (speed) of the created MP4 recording?</p>
+
+  <p><b>A:</b> For some applications the maximal supported capture rate of specific camera might be insufficient, and a
+    solution to this might be slowed down recording. The resulting media file is, hence, recorded at slowed down speed
+    as well. There might be multiple ways to address the restoration of the originally intended speed. </p>
+
+  <p>On way is to use available tools like FFmpeg to re-package the video (without re-compression, or with if you want):
+    please refer to the documentation of such tooling.</p>
+
+  <p>The codec also provides a convenience helper to update frame rate of already created MP4 recording. To find the
+    helper, start IC Capture 2.5 application and go to codec configuration UI. The property sheet contains a "Frame Rate
+    Helper" page, which lets you specify a MP4 file and desired frame rate. The helper will then create a new MP4 file
+    with the same content, but with the specified frame rate.
+  </p>
 
   <hr>
   <p><a href="index.html">↩️ Return to homepage</a></p>
